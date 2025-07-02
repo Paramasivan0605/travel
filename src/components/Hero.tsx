@@ -61,7 +61,7 @@ const Hero = () => {
               <Calendar className="h-5 w-5 text-white" />
               <input
                 type="date"
-                className="bg-transparent text-white outline-none flex-1"
+                className="bg-transparent text-black outline-none flex-1"
               />
             </div>
             <div className="flex items-center space-x-3 bg-white/20 rounded-lg p-3">
@@ -74,7 +74,7 @@ const Hero = () => {
                 <option value="4">4+ Guests</option>
               </select>
             </div>
-            <button className="bg-gradient-to-r from-sky-500 to-orange-500 text-white p-3 rounded-lg font-medium hover:shadow-lg transform hover:scale-105 transition-all flex items-center justify-center space-x-2">
+            <button className="bg-gradient-to-r from-sky-500 to-orange-500 text-black p-3 rounded-lg font-medium hover:shadow-lg transform hover:scale-105 transition-all flex items-center justify-center space-x-2">
               <Search className="h-5 w-5" />
               <span>Search</span>
             </button>
