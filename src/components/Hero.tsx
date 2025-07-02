@@ -47,7 +47,7 @@ const Hero = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div className="flex items-center space-x-3 bg-white/20 rounded-lg p-3">
               <MapPin className="h-5 w-5 text-white" />
-              <select className="bg-transparent text-white outline-none flex-1">
+              <select className="bg-transparent text-black outline-none flex-1">
                 <option value="">Select Destination</option>
                 <option value="bangkok">Bangkok</option>
                 <option value="phuket">Phuket</option>
@@ -66,7 +66,7 @@ const Hero = () => {
             </div>
             <div className="flex items-center space-x-3 bg-white/20 rounded-lg p-3">
               <Users className="h-5 w-5 text-white" />
-              <select className="bg-transparent text-white outline-none flex-1">
+              <select className="bg-transparent text-black outline-none flex-1">
                 <option value="">Guests</option>
                 <option value="1">1 Guest</option>
                 <option value="2">2 Guests</option>
