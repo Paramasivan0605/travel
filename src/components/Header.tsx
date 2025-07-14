@@ -15,7 +15,7 @@ const Header = () => {
           <div className="p-1 rounded-lg bg-white">
             <img src={logo} alt="Logo" className="h-8 w-8 object-contain" />
           </div>
-          <span className="text-xl font-bold text-gray-900">Apple Vacations</span>
+          <span className="text-xl font-bold text-gray-900">SSS Tours & Travels</span>
         </div>
 
           {/* Desktop Navigation */}
