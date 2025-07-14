@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Destinations from './components/Destinations';
 import Packages from './components/Packages';
-import Testimonials from './components/Testimonials';
+// import Testimonials from './components/Testimonials';
 import About from './components/About';
 import Contact from './components/Contact';
 import Newsletter from './components/Newsletter';
@@ -16,7 +16,7 @@ function App() {
       <Hero />
       <Destinations />
       <Packages />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <About />
       <Contact />
       <Newsletter />

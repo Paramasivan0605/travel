@@ -1,4 +1,3 @@
-import React from 'react';
 import { Star, ArrowRight, MapPin } from 'lucide-react';
 
 const destinations = [
@@ -144,46 +143,7 @@ const Destinations = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Thailand Map Section */}
-        <div className="mt-20 bg-white rounded-2xl p-8 shadow-lg">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                Discover Thailand's Regions
-              </h3>
-              <p className="text-gray-600 mb-6">
-                Thailand offers incredible diversity across its regions. From the cultural richness of the North to the tropical paradise of the South, each area has its unique charm and attractions.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <span className="font-medium">Northern Thailand</span>
-                  <span className="text-gray-500">- Mountains & Culture</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                  <span className="font-medium">Central Thailand</span>
-                  <span className="text-gray-500">- Bangkok & History</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                  <span className="font-medium">Southern Thailand</span>
-                  <span className="text-gray-500">- Islands & Beaches</span>
-                </div>
-              </div>
-            </div>
-            <div className="relative">
-              <img
-                src="https://images.pexels.com/photos/1007426/pexels-photo-1007426.jpeg?auto=compress&cs=tinysrgb&w=600"
-                alt="Thailand landscape"
-                className="w-full h-80 object-cover rounded-xl shadow-lg"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-sky-500/20 to-orange-500/20 rounded-xl"></div>
-            </div>
-          </div>
-        </div>
+        </div>     
       </div>
     </section>
   );
