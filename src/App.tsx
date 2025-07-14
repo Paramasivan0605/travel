@@ -19,7 +19,6 @@ function App() {
       {/* <Testimonials /> */}
       <About />
       <Contact />
-      <Newsletter />
       <Footer />
     </div>
   );
