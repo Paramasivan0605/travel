@@ -237,7 +237,7 @@ const Contact = () => {
         </div>
 
         {/* Thailand Travel Tips */}
-        <div className="mt-16 bg-white rounded-2xl p-8 shadow-sm">
+        {/* <div className="mt-16 bg-white rounded-2xl p-8 shadow-sm">
           <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
             Quick Thailand Travel Tips
           </h3>
@@ -270,7 +270,7 @@ const Contact = () => {
               <p className="text-sm text-gray-600">Malaysians get 30-day visa-free entry. Just bring your passport!</p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

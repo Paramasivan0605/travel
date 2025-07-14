@@ -159,7 +159,7 @@ const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } 
         </div>
 
         {/* Thailand Gallery Section */}
-        <div className="mt-20 px-4 md:px-10">
+        {/* <div className="mt-20 px-4 md:px-10">
           <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Experience the Beauty of Thailand
           </h3>
@@ -174,7 +174,7 @@ const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } 
               />
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Modal for enlarged image */}
