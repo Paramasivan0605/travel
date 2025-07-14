@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Plane } from 'lucide-react';
-import logo from './assets/logo.png'; 
+import logo from '../assets/Logo.png'; 
 
 
 const Header = () => {
@@ -11,12 +10,12 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="bg-gradient-to-r from-sky-500 to-orange-500 p-2 rounded-lg">
-              <Plane className="h-6 w-6 text-white" />
-            </div>
-            <span className="text-xl font-bold text-gray-900">Apple Vacations</span>
+         <div className="flex items-center space-x-2">
+          <div className="p-1 rounded-lg bg-white">
+            <img src={logo} alt="Logo" className="h-8 w-8 object-contain" />
           </div>
+          <span className="text-xl font-bold text-gray-900">Apple Vacations</span>
+        </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
