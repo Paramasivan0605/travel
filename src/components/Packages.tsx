@@ -185,7 +185,7 @@ const Packages = () => {
         </div>
 
         {/* Special Offers Section */}
-        <div className="mt-20 bg-gradient-to-r from-sky-500 to-orange-500 rounded-2xl p-8 text-white">
+        {/* <div className="mt-20 bg-gradient-to-r from-sky-500 to-orange-500 rounded-2xl p-8 text-white">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-3xl font-bold mb-4">Special Thailand Offers</h3>
@@ -234,7 +234,7 @@ const Packages = () => {
               />
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
