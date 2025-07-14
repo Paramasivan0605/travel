@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X, Plane } from 'lucide-react';
-import logo from './assets/logo.png'; 
+import logo from '../assets/logo.png';
 
 
 const Header = () => {
