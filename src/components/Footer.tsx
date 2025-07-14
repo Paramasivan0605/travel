@@ -1,5 +1,7 @@
 import React from 'react';
 import { Plane, Facebook, Instagram, Twitter, Youtube, MapPin, Phone, Mail } from 'lucide-react';
+import logo from '../assets/Logo.png'; 
+
 
 const Footer = () => {
   return (
@@ -19,7 +21,7 @@ const Footer = () => {
           <div className="md:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
               <div className="bg-gradient-to-r from-sky-500 to-orange-500 p-2 rounded-lg">
-                <Plane className="h-6 w-6 text-white" />
+                <img src={logo} alt="Logo" className="h-6 w-6 object-contain" />
               </div>
               <span className="text-xl font-bold">Apple Vacations</span>
             </div>
