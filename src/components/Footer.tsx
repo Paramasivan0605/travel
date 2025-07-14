@@ -23,7 +23,7 @@ const Footer = () => {
               <div className="bg-gradient-to-r from-sky-500 to-orange-500 p-2 rounded-lg">
                 <img src={logo} alt="Logo" className="h-6 w-6 object-contain" />
               </div>
-              <span className="text-xl font-bold">Apple Vacations</span>
+              <span className="text-xl font-bold">SSS Tours & Travels</span>
             </div>
             <p className="text-gray-400 mb-6">
               Malaysia's leading Thailand travel specialist for over 25 years. 
