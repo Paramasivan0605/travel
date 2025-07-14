@@ -43,7 +43,7 @@ const Hero = () => {
         </p>
 
         {/* Search Bar */}
-        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 max-w-4xl mx-auto">
+        {/* <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div className="flex items-center space-x-3 bg-white/20 rounded-lg p-3">
               <MapPin className="h-5 w-5 text-white" />
@@ -79,7 +79,7 @@ const Hero = () => {
               <span>Search</span>
             </button>
           </div>
-        </div>
+        </div> */}
 
         {/* Quick Stats */}
         <div className="grid grid-cols-3 gap-8 mt-12 max-w-2xl mx-auto">
