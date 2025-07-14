@@ -73,7 +73,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-2">
                 <Mail className="h-4 w-4" />
-                <span>thailand@applevacations.my</span>
+                <span>thailand@ssstours.my</span>
               </li>
               <li className="flex items-start space-x-2">
                 <MapPin className="h-4 w-4 mt-1" />
@@ -93,7 +93,7 @@ const Footer = () => {
 
         {/* Thailand Travel Gallery */}
         <div className="mt-12 pt-8 border-t border-gray-800">
-          <h3 className="text-lg font-semibold mb-6 text-center">Experience Thailand with Apple Vacations</h3>
+          <h3 className="text-lg font-semibold mb-6 text-center">Experience Thailand with SSS Tours & Travels</h3>
           <div className="grid grid-cols-4 md:grid-cols-8 gap-4">
             <img
               src="https://images.pexels.com/photos/1371360/pexels-photo-1371360.jpeg?auto=compress&cs=tinysrgb&w=150"
@@ -143,7 +143,7 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
             <div className="text-center md:text-left">
               <p className="text-gray-400">
-                &copy; 2025 Apple Vacations. All rights reserved. | 
+                &copy; 2025 SSS Tours & Travels. All rights reserved. | 
                 <a href="#" className="hover:text-white transition-colors"> Privacy Policy</a> | 
                 <a href="#" className="hover:text-white transition-colors"> Terms of Service</a>
               </p>
