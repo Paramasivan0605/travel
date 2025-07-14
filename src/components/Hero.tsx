@@ -82,7 +82,7 @@ const Hero = () => {
         </div> */}
 
         {/* Quick Stats */}
-        <div className="grid grid-cols-3 gap-8 mt-12 max-w-2xl mx-auto">
+        {/* <div className="grid grid-cols-3 gap-8 mt-12 max-w-2xl mx-auto">
           <div className="text-center">
             <div className="text-3xl font-bold text-white">0+</div>
             <div className="text-white/80 text-sm">Thailand Destinations</div>
@@ -95,7 +95,7 @@ const Hero = () => {
             <div className="text-3xl font-bold text-white">0K+</div>
             <div className="text-white/80 text-sm">Happy Travelers</div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Scroll Indicator */}
