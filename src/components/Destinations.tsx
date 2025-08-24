@@ -288,142 +288,151 @@ const Destinations = () => {
         </div>
 
         {/* Destinations Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredDestinations.map((destination, index) => {
-            const badge = getBadge(destination);
-            const isLiked = likedDestinations.has(destination.id);
-            
-            return (
-              <div
-                key={destination.id}
-                className={`group relative bg-white/10 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/20 hover:border-white/40 transition-all duration-700 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/10 ${
-                  isVisible ? 'animate-fade-in-up opacity-100' : 'opacity-0'
-                }`}
-                style={{ animationDelay: `${index * 150}ms` }}
-                onMouseEnter={() => setHoveredCard(destination.id)}
-                onMouseLeave={() => setHoveredCard(null)}
-              >
-                {/* Image Container */}
-                <div className="relative overflow-hidden h-80">
-                  <img
-                    src={destination.image}
-                    alt={destination.name}
-                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
-                  />
-                  
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                  
-                  {/* Badge */}
-                  {badge && (
-                    <div className={`absolute top-4 left-4 ${badge.color} text-white px-3 py-1 rounded-full text-sm font-medium flex items-center space-x-1 shadow-lg animate-pulse`}>
-                      <span>{badge.icon}</span>
-                      <span>{badge.text}</span>
-                    </div>
-                  )}
-                  
-                  {/* Like Button */}
-                  <button
-                    onClick={() => toggleLike(destination.id)}
-                    className={`absolute top-4 right-4 w-10 h-10 rounded-full backdrop-blur-md border border-white/30 transition-all duration-300 flex items-center justify-center ${
-                      isLiked 
-                        ? 'bg-red-500 text-white scale-110' 
-                        : 'bg-white/10 text-white hover:bg-white/20 hover:scale-110'
-                    }`}
-                  >
-                    <Heart className={`w-5 h-5 transition-all ${isLiked ? 'fill-current' : ''}`} />
-                  </button>
-                  
-                  {/* Rating & Views */}
-                  <div className="absolute bottom-4 left-4 flex items-center space-x-4">
-                    <div className="flex items-center space-x-1 bg-white/20 backdrop-blur-md rounded-full px-3 py-1">
-                      <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                      <span className="text-white font-medium">{destination.rating}</span>
-                    </div>
-                    <div className="flex items-center space-x-1 bg-white/20 backdrop-blur-md rounded-full px-3 py-1">
-                      <Eye className="w-4 h-4 text-white" />
-                      <span className="text-white text-sm">{destination.reviews}</span>
-                    </div>
-                  </div>
-                  
-                  {/* Region */}
-                  <div className="absolute bottom-4 right-4 flex items-center space-x-1 text-white">
-                    <MapPin className="w-4 h-4" />
-                    <span className="text-sm font-medium">{destination.region}</span>
-                  </div>
-                </div>
-                
-                {/* Content */}
-                <div className="p-8">
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-2 group-hover:text-blue-600 transition-colors">
-                        {destination.name}
-                      </h3>
-                      <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                        {destination.description}
-                      </p>
-                    </div>
-                  </div>
-                  
-                  {/* Trip Details */}
-                  <div className="grid grid-cols-3 gap-4 mb-6 p-4 bg-gradient-to-r from-blue-50/50 to-purple-50/50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl border border-blue-100/50 dark:border-blue-800/30">
-                    <div className="text-center">
-                      <Calendar className="w-5 h-5 mx-auto text-blue-500 mb-1" />
-                      <div className="text-xs font-medium text-slate-600 dark:text-slate-400">{destination.duration}</div>
-                    </div>
-                    <div className="text-center">
-                      <Users className="w-5 h-5 mx-auto text-green-500 mb-1" />
-                      <div className="text-xs font-medium text-slate-600 dark:text-slate-400">{destination.difficulty}</div>
-                    </div>
-                    <div className="text-center">
-                      <Camera className="w-5 h-5 mx-auto text-orange-500 mb-1" />
-                      <div className="text-xs font-medium text-slate-600 dark:text-slate-400">{destination.bestTime}</div>
-                    </div>
-                  </div>
-                  
-                  {/* Highlights */}
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {destination.highlights.slice(0, 3).map((highlight, idx) => (
-                      <span
-                        key={idx}
-                        className="bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full text-xs font-medium border border-blue-200/50 dark:border-blue-700/50"
-                      >
-                        {highlight}
-                      </span>
-                    ))}
-                  </div>
-                  
-                  {/* Pricing */}
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center space-x-2">
-                      <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                        {destination.price}
-                      </span>
-                      <span className="text-sm text-slate-500 dark:text-slate-400 line-through">
-                        {destination.originalPrice}
-                      </span>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-xs text-slate-500 dark:text-slate-400">per person</div>
-                    </div>
-                  </div>
-                  
-                  {/* CTA Button */}
-                  <button className={`w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white py-4 rounded-2xl font-semibold transition-all duration-300 flex items-center justify-center space-x-2 group/btn shadow-lg hover:shadow-xl hover:shadow-blue-500/25 ${
-                    hoveredCard === destination.id ? 'scale-105' : ''
-                  }`}>
-                    <span>Explore {destination.name}</span>
-                    <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
-                  </button>
-                </div>
-                
-                {/* Hover Overlay Effect */}
-                <div className={`absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl`}></div>
-              </div>
-            );
-          })}
+       {/* Destinations Grid */}
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  {filteredDestinations.map((destination, index) => {
+    const badge = getBadge(destination);
+    const isLiked = likedDestinations.has(destination.id);
+
+    return (
+      <div
+        key={destination.id}
+        className={`group relative bg-white/10 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/20 hover:border-white/40 transition-all duration-700 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/10 ${
+          isVisible ? 'animate-fade-in-up opacity-100' : 'opacity-0'
+        }`}
+        style={{ animationDelay: `${index * 150}ms` }}
+        onMouseEnter={() => setHoveredCard(destination.id)}
+        onMouseLeave={() => setHoveredCard(null)}
+      >
+        {/* Image Container */}
+        <div className="relative overflow-hidden h-80">
+          <img
+            src={destination.image}
+            alt={destination.name}
+            className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+          {/* Badge */}
+          {badge && (
+            <div className={`absolute top-4 left-4 ${badge.color} text-white px-3 py-1 rounded-full text-sm font-medium flex items-center space-x-1 shadow-lg animate-pulse`}>
+              <span>{badge.icon}</span>
+              <span>{badge.text}</span>
+            </div>
+          )}
+
+          {/* Like Button */}
+          <button
+            onClick={() => toggleLike(destination.id)}
+            className={`absolute top-4 right-4 w-10 h-10 rounded-full backdrop-blur-md border border-white/30 transition-all duration-300 flex items-center justify-center ${
+              isLiked 
+                ? 'bg-red-500 text-white scale-110' 
+                : 'bg-white/10 text-white hover:bg-white/20 hover:scale-110'
+            }`}
+          >
+            <Heart className={`w-5 h-5 transition-all ${isLiked ? 'fill-current' : ''}`} />
+          </button>
+
+          {/* Rating & Views */}
+          <div className="absolute bottom-4 left-4 flex items-center space-x-4">
+            <div className="flex items-center space-x-1 bg-white/20 backdrop-blur-md rounded-full px-3 py-1">
+              <Star className="w-4 h-4 text-yellow-400 fill-current" />
+              <span className="text-white font-medium">{destination.rating}</span>
+            </div>
+            <div className="flex items-center space-x-1 bg-white/20 backdrop-blur-md rounded-full px-3 py-1">
+              <Eye className="w-4 h-4 text-white" />
+              <span className="text-white text-sm">{destination.reviews}</span>
+            </div>
+          </div>
+
+          {/* Region */}
+          <div className="absolute bottom-4 right-4 flex items-center space-x-1 text-white">
+            <MapPin className="w-4 h-4" />
+            <span className="text-sm font-medium">{destination.region}</span>
+          </div>
         </div>
+
+        {/* ✅ Only show name when All filter */}
+        {activeFilter === "All" ? (
+          <div className="p-6">
+            <h3 className="text-2xl font-bold text-slate-800 dark:text-white text-center">
+              {destination.name}
+            </h3>
+          </div>
+        ) : (
+          /* Show full details for other categories */
+          <div className="p-8">
+            <div className="flex items-start justify-between mb-4">
+              <div>
+                <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-2 group-hover:text-blue-600 transition-colors">
+                  {destination.name}
+                </h3>
+                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                  {destination.description}
+                </p>
+              </div>
+            </div>
+
+            {/* Trip Details */}
+            <div className="grid grid-cols-3 gap-4 mb-6 p-4 bg-gradient-to-r from-blue-50/50 to-purple-50/50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl border border-blue-100/50 dark:border-blue-800/30">
+              <div className="text-center">
+                <Calendar className="w-5 h-5 mx-auto text-blue-500 mb-1" />
+                <div className="text-xs font-medium text-slate-600 dark:text-slate-400">{destination.duration}</div>
+              </div>
+              <div className="text-center">
+                <Users className="w-5 h-5 mx-auto text-green-500 mb-1" />
+                <div className="text-xs font-medium text-slate-600 dark:text-slate-400">{destination.difficulty}</div>
+              </div>
+              <div className="text-center">
+                <Camera className="w-5 h-5 mx-auto text-orange-500 mb-1" />
+                <div className="text-xs font-medium text-slate-600 dark:text-slate-400">{destination.bestTime}</div>
+              </div>
+            </div>
+
+            {/* Highlights */}
+            <div className="flex flex-wrap gap-2 mb-6">
+              {destination.highlights.slice(0, 3).map((highlight, idx) => (
+                <span
+                  key={idx}
+                  className="bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full text-xs font-medium border border-blue-200/50 dark:border-blue-700/50"
+                >
+                  {highlight}
+                </span>
+              ))}
+            </div>
+
+            {/* Pricing */}
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center space-x-2">
+                <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  {destination.price}
+                </span>
+                <span className="text-sm text-slate-500 dark:text-slate-400 line-through">
+                  {destination.originalPrice}
+                </span>
+              </div>
+              <div className="text-right">
+                <div className="text-xs text-slate-500 dark:text-slate-400">per person</div>
+              </div>
+            </div>
+
+            {/* CTA Button */}
+            <button className={`w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white py-4 rounded-2xl font-semibold transition-all duration-300 flex items-center justify-center space-x-2 group/btn shadow-lg hover:shadow-xl hover:shadow-blue-500/25 ${
+              hoveredCard === destination.id ? 'scale-105' : ''
+            }`}>
+              <span>Explore {destination.name}</span>
+              <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+            </button>
+          </div>
+        )}
+
+        {/* Hover Overlay Effect */}
+        <div className={`absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl`}></div>
+      </div>
+    );
+  })}
+</div>
+
       </div>
 
       <style jsx>{`
