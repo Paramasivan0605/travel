@@ -8,10 +8,14 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Newsletter from './components/Newsletter';
 import Footer from './components/Footer';
+import { ThemeProvider } from './context/ThemeContext';
+
 
 function App() {
   return (
-    <div className="min-h-screen">
+    // <div className="min-h-screen">
+      <ThemeProvider>
+      <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
       <Header />
       <Hero />
       <Destinations />
@@ -20,8 +24,9 @@ function App() {
       <About />
       <Contact />
       <Footer />
-    </div>
-  );
+      </div>
+    </ThemeProvider>
+     );
 }
 
 export default App;
